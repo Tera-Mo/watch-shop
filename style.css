@@ -123,12 +123,13 @@ header h1 {
     font-size: 0.8em;
 }
 
-.paypal-link-wrapper {
+/* تنسيقات زر "اطلب الآن" الجديد في index.html */
+.action-button-wrapper {
     margin-bottom: 30px;
     text-align: right;
 }
 
-.buy-button {
+.buy-now-main-button {
     background: var(--accent-color);
     color: #fff;
     border: none;
@@ -139,13 +140,14 @@ header h1 {
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none; /* لإزالة خط التسطير الافتراضي للروابط */
 }
 
-.buy-button:hover {
+.buy-now-main-button:hover {
     background: #0056b3;
     transform: translateY(-2px);
 }
+
 
 .product-description {
     margin-top: 20px;
@@ -175,7 +177,6 @@ header h1 {
     margin-bottom: 8px;
 }
 
-/* قسم الفيديو الجديد */
 .product-video-section {
     background: #fff;
     padding: 40px 0;
@@ -193,7 +194,7 @@ header h1 {
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* نسبة عرض إلى ارتفاع 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     max-width: 800px;
@@ -202,7 +203,7 @@ header h1 {
     border-radius: 8px;
 }
 
-.video-wrapper video { /* استهداف عنصر الفيديو مباشرة */
+.video-wrapper video {
     position: absolute;
     top: 0;
     left: 0;
@@ -213,7 +214,6 @@ header h1 {
 }
 
 
-/* قسم المزيد من الصور */
 .more-photos-section {
     background: #fff;
     padding: 40px 0;
@@ -251,7 +251,6 @@ header h1 {
 }
 
 
-/* قسم معلومات إضافية (المواصفات، الشحن، إلخ) */
 .more-info-section {
     background: #fff;
     padding: 40px 0;
@@ -367,7 +366,7 @@ footer {
     }
 
     .product-title, .product-price,
-    .product-description h3, .paypal-link-wrapper {
+    .product-description h3 {
         text-align: center;
     }
 
@@ -407,7 +406,7 @@ footer {
     .product-price {
         font-size: 2.2em;
     }
-    .buy-button {
+    .buy-now-main-button { /* تحديث اسم الفئة */
         font-size: 1.2em;
         padding: 12px 25px;
     }

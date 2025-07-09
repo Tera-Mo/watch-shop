@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب - ساعة PAAZOMU</title>
+    <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #f8f8f8;
+            --accent-color: #007bff;
+            --text-color: #444;
+            --border-color: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--secondary-color);
+            direction: rtl;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--accent-color);
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .order-section {
+            background: #fff;
+            padding: 40px 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            flex-grow: 1;
+        }
+
+        .order-section h2 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .order-form {
+            text-align: right;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--text-color);
+            font-size: 1.1em;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            direction: rtl;
+            text-align: right;
+            background-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-order-button {
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.4em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .submit-order-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 40px;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            .order-section {
+                padding: 30px 15px;
+            }
+            .order-section h2 {
+                font-size: 1.8em;
+            }
+            .form-group label {
+                font-size: 1em;
+            }
+            .form-group input, .form-group select, .form-group textarea {
+                padding: 10px 12px;
+            }
+            .submit-order-button {
+                font-size: 1.2em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ساعة اليد الفاخرة PAAZOMU</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="order-page" class="order-section">
+            <div class="container">
+                <h2>إتمام طلب ساعة PAAZOMU</h2>
+                <form id="orderForm" action="https://formspree.io/f/xqabvwew" method="POST" class="order-form">
+                    <p style="margin-bottom: 25px; text-align: center; font-size: 1.1em; color: var(--primary-color);">يرجى ملء التفاصيل أدناه لإتمام طلبك. بعد تأكيد الطلب، سيتم توجيهك لصفحة الدفع.</p>
+
+                    <div class="form-group">
+                        <label for="fullName">الاسم الكامل:</label>
+                        <input type="text" id="fullName" name="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactInfo">رقم الهاتف أو البريد الإلكتروني:</label>
+                        <input type="text" id="contactInfo" name="رقم الهاتف او البريد الالكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="detailedAddress">العنوان التفصيلي (الشارع، المبنى، رقم الشقة):</label>
+                        <input type="text" id="detailedAddress" name="العنوان التفصيلي" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">المدينة:</label>
+                        <input type="text" id="city" name="المدينة" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">الدولة:</label>
+                        <input type="text" id="country" name="الدولة" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="watchType">نوع الساعة:</label>
+                        <select id="watchType" name="نوع الساعة" required>
+                            <option value="" disabled selected>-- الرجاء اختيار نوع الساعة --</option>
+                            <option value="Green">أخضر</option>
+                            <option value="Green + Gold">أخضر + ذهبي</option>
+                            <option value="Blue">أزرق</option>
+                            <option value="Blue + Gold">أزرق + ذهبي</option>
+                            <option value="Full Gold">ذهبي بالكامل</option>
+                            <option value="Full Silver">فضي بالكامل</option>
+                            <option value="Silver + Gold">فضي + ذهبي</option>
+                            <option value="Black">أسود</option>
+                            <option value="Black + Gold">أسود + ذهبي</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="notes">ملاحظات إضافية (اختياري):</label>
+                        <textarea id="notes" name="ملاحظات اضافية" rows="3"></textarea>
+                    </div>
+                    <!-- حقل مخفي لمعرف الطلب الفريد -->
+                    <input type="hidden" id="orderId" name="معرف الطلب الفريد">
+                    <input type="hidden" name="Product Name" value="ساعة اليد الفاخرة PAAZOMU - إصدار الكوارتز">
+                    <input type="hidden" name="Product Price" value="99.9$">
+                    <button type="submit" class="submit-order-button">تأكيد الطلب والدفع</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 اسم متجرك. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderForm = document.getElementById('orderForm');
+            const orderIdInput = document.getElementById('orderId');
+
+            // توليد معرف طلب فريد عند تحميل الصفحة
+            // يستخدم crypto.randomUUID() لتوليد معرف فريد عالميًا (UUID v4)
+            if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                orderIdInput.value = crypto.randomUUID();
+            } else {
+                // حل احتياطي للمتصفحات القديمة (أقل أمانًا للفرادة)
+                orderIdInput.value = 'order-' + Date.now() + Math.random().toString(36).substring(2, 9);
+            }
+
+
+            // قائمة بروابط PayPal لكل نوع ساعة
+            // === تم تحديث هذه الروابط بالروابط الحقيقية التي قدمتها ===
+            const paypalLinks = {
+                "Green": "https://www.paypal.com/ncp/payment/Y8GGF6ZBYZ95U",
+                "Green + Gold": "https://www.paypal.com/ncp/payment/QG37TVCGH8ATW",
+                "Blue": "https://www.paypal.com/ncp/payment/ET7T6DPEDN2QG",
+                "Blue + Gold": "https://www.paypal.com/ncp/payment/6C78968FF7CNA",
+                "Full Gold": "https://www.paypal.com/ncp/payment/EWQEKHPGGYWKY",
+                "Full Silver": "https://www.paypal.com/ncp/payment/Z392PBGW7LCTS",
+                "Silver + Gold": "https://www.paypal.com/ncp/payment/9LC9FLPH6M9WN",
+                "Black": "https://www.paypal.com/ncp/payment/A4L8K45Y3FC3L",
+                "Black + Gold": "https://www.paypal.com/ncp/payment/YW5AYUNV239CA"
+            };
+
+            orderForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+                const formData = new FormData(orderForm);
+                const selectedWatchType = formData.get('نوع الساعة');
+                const paypalRedirectUrl = paypalLinks[selectedWatchType];
+
+                // التحقق من اختيار نوع ساعة صالح (لم يعد التحقق من "DUMMY" ضروريًا بعد تحديث الروابط)
+                if (!selectedWatchType || selectedWatchType === "") {
+                    alert('الرجاء اختيار نوع ساعة صالح للمتابعة بالدفع.');
+                    return;
+                }
+
+                try {
+                    // إرسال البيانات إلى Formspree
+                    const response = await fetch(orderForm.action, {
+                        method: orderForm.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // إذا تم الإرسال بنجاح إلى Formspree، قم بإعادة التوجيه إلى PayPal
+                        window.location.href = paypalRedirectUrl;
+                    } else {
+                        // التعامل مع الأخطاء من Formspree
+                        const data = await response.json();
+                        if (data.errors) {
+                            alert('حدث خطأ في إرسال الطلب: ' + data.errors.map(e => e.field + ' ' + e.message).join(', '));
+                        } else {
+                            alert('حدث خطأ غير معروف أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.');
+                        }
+                    }
+                } catch (error) {
+                    console.error('خطأ في إرسال النموذج:', error);
+                    alert('حدث خطأ في الاتصال. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
